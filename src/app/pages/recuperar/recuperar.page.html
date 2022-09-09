@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/"
+        color="primary">volver</ion-back-button>
+    </ion-buttons>
+    <ion-title size="small" id="azul1">Recuperar clave</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="fondoApp">
+  <ion-img src="assets/logoApp.png" ></ion-img>
+
+  <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+
+    <ion-item>
+      <ion-label  position="stacked" >Ingrese email:</ion-label>
+      <ion-input name="mail" type="mail" [(ngModel)]="usuario.email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  position="stacked">Ingrese codigo:</ion-label>
+      <ion-input name="codigo" type="text" [(ngModel)]="usuario.codigo" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  position="stacked">Nueva contraseña:</ion-label>
+      <ion-input name="password" type="password" [(ngModel)]="usuario.password" required></ion-input>
+    </ion-item>
+
+
+    <ion-row>
+      <ion-col offset="3" size="6">
+          <ion-button [disabled] ="formulario.invalid" id="btn" 
+          type="submit" expand="block" strong=true routerLink="/inicio" >
+          Aceptar
+          </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

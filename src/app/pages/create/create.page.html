@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/"
+        color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small" id="azul1">Crear cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="fondoApp">
+  <ion-img src="assets/logoApp.png" ></ion-img>
+
+  <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label  position="stacked" >Ingrese nombre:</ion-label>
+      <ion-input name="nombre" type="text" [(ngModel)]="usuario.nombre" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  position="stacked" >Ingrese correo institucional:</ion-label>
+      <ion-input name="email" type="mail" [(ngModel)]="usuario.email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  position="stacked">Ingrese contraseña:</ion-label>
+      <ion-input name="password" type="password" [(ngModel)]="usuario.password" required></ion-input>
+    </ion-item>
+   
+
+    <ion-row>
+      <ion-col offset="3" size="6">
+          <ion-button [disabled] ="formulario.invalid" id="btn" 
+          type="submit" expand="block" strong=true routerLink="/inicio" >
+          Aceptar
+          </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>
